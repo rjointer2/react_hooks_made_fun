@@ -1,10 +1,11 @@
 
 
 import { useLayoutEffect, useMemo, useState } from "react";
+import { key } from "../lib/typeDef";
 
 export default function Game() {
 
-    const [ state, setState ] = useState(0);
+    const [ state, setState ] = useState< KeyboardEvent["code"] | string>('');
     const [ frame, setFrame ] = useState(0);
   
     // This is techincally isn't needed aand is a hair split in opping the performance
@@ -23,16 +24,16 @@ export default function Game() {
           setFrame(f => f+1)
         }, 16.7)
     
-        const test1 = (e: KeyboardEvent) => {
+        const emitKey: key = (e) => {
           setState(s =>  s + 1)
           console.log(e)
         }
   
-        window.addEventListener('keydown', test1)
+        window.addEventListener('keydown', emitKey)
   
         return () => {
           clearTimeout(test)
-          window.removeEventListener('keydown', test1)
+          window.removeEventListener('keydown', emitKey)
         }
       
     })  
