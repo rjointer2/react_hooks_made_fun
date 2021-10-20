@@ -26,7 +26,7 @@ export interface BasePlayerInterface {
 export const basePlayerModel: BasePlayerInterface = {
 
     // charateristics
-    color: "ff0000",
+    color: "#ff0000",
     name: "",
     height: 32,
     width: 32,
@@ -34,7 +34,7 @@ export const basePlayerModel: BasePlayerInterface = {
 
     // coords
 
-    x: 0, // height poisitioning
+    x: 32, // height poisitioning
     y: 0, // left and right / y position
 
     // powers
