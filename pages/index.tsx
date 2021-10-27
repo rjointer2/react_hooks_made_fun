@@ -1,7 +1,7 @@
 
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Image from 'next/image'
+//import Image from 'next/image';
 import { useEffect, useState } from 'react'
 import Game from '../components/Game'
 
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
       </div>
 
       <div>
-        { init && <Game /> }
+        {  process.browser && init && <Game /> }
         <button onClick={() => setInit(i => !i)}>Start Game</button>
       </div>
 

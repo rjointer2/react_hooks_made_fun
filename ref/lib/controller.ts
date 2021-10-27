@@ -1,4 +1,4 @@
-import { BasePlayerInterface } from "./basePlayerModel";
+import { BasePlayerInterface } from "./typeDef";
 
 export const controller = (player: BasePlayerInterface, keycode: KeyboardEvent["code"] ) => {
     

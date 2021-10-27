@@ -1,40 +1,30 @@
-import { BasePlayerInterface } from "./basePlayerModel";
 
-export const physics = ( player: BasePlayerInterface,  context: CanvasRenderingContext2D ) => {
+import { BasePlayerModel } from "./player";
+import { BasePlayerInterface } from "./typeDef";
 
-    console.log("lo")
+export const updatePosition = ( 
+    player: BasePlayerInterface
+) => {
+    player.y_velocity += player.weight;
+    player.y += player.y_velocity;
+}
+
+export const updateCanvas = ( 
+    context: CanvasRenderingContext2D, 
+    player: BasePlayerModel 
+) => {
 
     context.beginPath();
     // we have to give the canvas gray filling
     context.rect(player.x, player.y, player.width, player.height);
-    // so blue is working now! just no input
+    
     context.fillStyle = player.color;// layer color: ;
-    context.fill();
+    context.fill(); 
 
-    // physics
+}
 
-    // velocity is 1.5 every frame
-    player.y_velocity += 0.4; // gravity of the canvas
-    player.x += player.x_velocity;
-    player.y += player.y_velocity;
+export const fly = (
+    player: 
+) => {
 
-    // friction -> slow gradually
-
-    player.x_velocity *= 0.9;
-    player.y_velocity *= 0.9;
-
-    // ground detection
-
-    if ( player.y > 100 ) {
-
-        player.jumping = false;
-        player.y = 100;
-
-        // once the player hits the ground, your veclocity should stop
-        // instantly
-        player.y_velocity = 0;
-
-    }
-    
-    
 }

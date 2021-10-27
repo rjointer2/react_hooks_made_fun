@@ -1,5 +1,4 @@
 
-
 export interface BasePlayerInterface {
     color: string;
     name: string;
@@ -12,5 +11,4 @@ export interface BasePlayerInterface {
     ducking: boolean;
     x_velocity: number;
     y_velocity: number;
-    weight: number;
 }
