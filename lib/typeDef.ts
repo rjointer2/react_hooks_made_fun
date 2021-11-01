@@ -1,6 +1,6 @@
 
 
-export interface BasePlayerInterface {
+export interface BaseModelInterface {
     color: string;
     name: string;
     height: number;
@@ -13,4 +13,7 @@ export interface BasePlayerInterface {
     x_velocity: number;
     y_velocity: number;
     weight: number;
+    cols: number;
+    spriteWidth: number;
+    spriteSrc: string;
 }

@@ -11,5 +11,5 @@ export const me = new BasePlayerModel({
     jumping: false,
     ducking: false,
     x_velocity: 0,
-    y_velocity: 0
+    y_velocity: 0,
 })

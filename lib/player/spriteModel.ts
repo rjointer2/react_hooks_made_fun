@@ -1,6 +1,6 @@
-import { BasePlayerInterface } from "./typeDef";
+import { BaseModelInterface } from "../typeDef";
 
-export class BasePlayerModel {
+export class BaseModel {
     color: string;
     name: string;
     height: number;
@@ -13,11 +13,15 @@ export class BasePlayerModel {
     x_velocity: number;
     y_velocity: number;
     weight: number;
+    cols: number;
+    spriteWidth: number;
+    spriteSrc: string;
 
     constructor({ 
         color, name, height, width, originalHeight,
-        x, y, jumping, ducking, x_velocity, y_velocity
-    } : BasePlayerInterface) {
+        x, y, jumping, ducking, x_velocity, y_velocity,
+        cols, spriteWidth, spriteSrc
+    } : BaseModelInterface) {
         this.color = color;
         this.name = name;
         this.height = height;
@@ -30,5 +34,8 @@ export class BasePlayerModel {
         this.x_velocity = x_velocity;
         this.y_velocity = y_velocity;
         this.weight = 1;
+        this.cols = cols
+        this.spriteWidth = spriteWidth;
+        this.spriteSrc = spriteSrc;
     }
 }
